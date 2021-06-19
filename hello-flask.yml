@@ -1,17 +1,27 @@
 ---
--name: Hello Flask
-  - hosts: all
+- name: Hello Flask
+  hosts: localhost
   become: true
   
   tasks:
-    - name: install docker
+    - name: Install docker
       yum:
         name:
           - docker
         state: present
         update_cache: yes
+ 
     - name: Enable and Start docker service
       service:
         name: docker
         enabled: yes
         state: started
+
+    - name: Clone Repository 
+      git:
+        repo: https://github.com/arksinha93/python-flask-demo.git
+        dest: arksinha/python-flask-demo
+    
+    - name: Build Docker
+      shell:
+        name: docker build -t my-flask-app .
