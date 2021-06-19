@@ -1,6 +1,6 @@
 ---
 - name: Hello Flask
-  hosts: 20.198.73.9
+  hosts: Appserver
   become: true
   
   tasks:
