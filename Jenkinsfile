@@ -1,9 +1,8 @@
-node ('appnode')
-{ 
+node { 
    stage('Get Source') {
       // copy source code from local file system and test
       // for a Dockerfile to build the Docker image
-      sshagent (credentials: ['arksinha']) {
+      //sshagent (credentials: ['arksinha']) {
       git ('https://github.com/arksinha93/python-flask-demo.git')
       if (!fileExists("Dockerfile")) {
          error('Dockerfile missing.')
@@ -20,4 +19,4 @@ node ('appnode')
           sh "sudo docker run -p 5000:5000 --name my-flask-app -d my-flask-app"      
     }
    }  
-}
+//}
