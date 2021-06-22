@@ -1,4 +1,4 @@
-node { 
+agent { 
    stage('Get Source') {
       // copy source code from local file system and test
       // for a Dockerfile to build the Docker image
@@ -19,4 +19,4 @@ node {
           sh "sudo docker run -p 5000:5000 --name my-flask-app -d my-flask-app"      
     }
    }  
-//}
+
