@@ -19,7 +19,7 @@ pipeline {
          sh "sudo docker rm --force my-flask-app"
    }
       
-   stage("Test and Deploy Docker Container"){
+   stage('Test and Deploy Docker Container'){
          //sh "sudo docker tag my-flask-app:latest arksinha/flaskapp:latest"
          //sh "sudo docker pull arksinha/flaskapp"
           sh "sudo docker run -p 5000:5000 --name my-flask-app -d my-flask-app"      
