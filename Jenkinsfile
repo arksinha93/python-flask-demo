@@ -1,3 +1,6 @@
+import hudson.util.RemotingDiagnostics
+import jenkins.model.Jenkins
+
 node ("appnode")
 {
    stage('Get Source') {
