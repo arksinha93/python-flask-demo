@@ -1,7 +1,4 @@
-pipeline { 
-   agent any
-   
-   stages {
+node {
       
       stage('Get Source') {
       // copy source code from local file system and test
@@ -24,5 +21,4 @@ pipeline {
          //sh "sudo docker pull arksinha/flaskapp"
           sh "sudo docker run -p 5000:5000 --name my-flask-app -d my-flask-app"      
     }
-   }  
 }
