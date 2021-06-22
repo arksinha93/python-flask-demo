@@ -11,7 +11,7 @@ node {
    stage('Build Docker') {
        // build the docker image from the source code using the BUILD_ID parameter in image name
          sh "sudo docker build -t my-flask-app ."
-      // sh "sudo docker rm --force my-flask-app"
+         sh "sudo docker rm --force my-flask-app"
    }
    stage("Test and Deploy Docker Container"){
          //sh "sudo docker tag my-flask-app:latest arksinha/flaskapp:latest"
