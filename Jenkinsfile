@@ -7,9 +7,9 @@ pipeline {
         
         steps {
       git ('https://github.com/arksinha93/python-flask.git')
-      if (!fileExists("Dockerfile")) {
-         error('Dockerfile missing.')
-      }
+      //if (!fileExists("Dockerfile")) {
+        // error('Dockerfile missing.')
+      //}
     }
     }
 
