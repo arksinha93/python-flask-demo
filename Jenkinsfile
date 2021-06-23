@@ -6,7 +6,7 @@ pipeline {
     stage('Checkout SCM')   {
         
         steps {
-      git ('https://github.com/arksinha93/python-flask.git')
+      git ('https://github.com/arksinha93/python-flask-demo.git')
       //if (!fileExists("Dockerfile")) {
         // error('Dockerfile missing.')
       //}
