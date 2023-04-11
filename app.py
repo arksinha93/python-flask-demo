@@ -1,16 +1,20 @@
-from flask import Flask, render_template
-import os
 
-app = Flask(__name__)
+s = "hello world" 
 
-@app.route("/")
-def home():
-    return render_template("index.html")
-    
-@app.route("/about")
-def about():
-    return render_template("about.html")
-    
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True,host='0.0.0.0',port=port)
+import unittest
+
+class TestStringMethods(unittest.TestCase):
+
+    def test_isupper(self):
+        self.assertTrue('FOO'.isupper())
+        self.assertFalse('Foo'.isupper())
+
+    def test_split(self):
+        s = 'hello world'
+        self.assertEqual(s.split(), ['hello', 'world'])
+        # check that s.split fails when the separator is not a string
+        with self.assertRaises(TypeError):
+            s.split(2)
+
+if __name__ == '__main__':
+    unittest.main()
